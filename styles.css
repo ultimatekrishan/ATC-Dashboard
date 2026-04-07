@@ -47,9 +47,9 @@
   --text-label:     #4a6280;
 
   /* Typography */
-  --font-mono:    'Share Tech Mono', monospace;
-  --font-ui:      'Rajdhani', sans-serif;
-  --font-display: 'Orbitron', sans-serif;
+--font-mono:    'JetBrains Mono', monospace;
+--font-ui:      'Inter', sans-serif;
+--font-display: 'Inter', sans-serif;
 }
 
 
