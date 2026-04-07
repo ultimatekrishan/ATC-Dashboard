@@ -684,29 +684,22 @@ async function loadWeather() {
 
     console.log("Weather Data:", data);
 
-    if (data.success) {
+    if (!data.success) return;
 
-      // WIND
-      document.getElementById('windVal').textContent =
-        `${data.windDir}° / ${data.windSpeed} KT`;
+    document.getElementById('windVal')?.textContent =
+      `${data.windDir || '--'}° / ${data.windSpeed || '--'} KT`;
 
-      // TEMP / DEW
-      document.getElementById('tempVal').textContent =
-        `${data.temp}° / ${data.dew}°`;
+    document.getElementById('tempVal')?.textContent =
+      `${data.temp || '--'}° / ${data.dew || '--'}°`;
 
-      // QNH
-      document.getElementById('qnhVal').textContent =
-        `${data.qnh} hPa`;
+    document.getElementById('qnhVal')?.textContent =
+      `${data.qnh || '--'} hPa`;
 
-      // CLOUDS
-      document.getElementById('cloudVal').textContent =
-        data.clouds;
+    document.getElementById('cloudVal')?.textContent =
+      data.clouds || 'N/A';
 
-      // RAW METAR
-      document.getElementById('metarText').textContent =
-        data.raw;
-
-    }
+    document.getElementById('metarText')?.textContent =
+      data.raw || 'No METAR';
 
   } catch (err) {
     console.error("Weather error:", err);
