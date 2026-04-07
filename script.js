@@ -26,7 +26,7 @@
  * Paste your Google Apps Script Web App URL here after deployment.
  * See SETUP_GUIDE.html for step-by-step instructions.
  */
-const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby4mgEq8vfVjG2n5BDAkSkgfOyUjUZt16W-dDSyuKdfNAMYFXKIO6MbmTVgPvGzx-7faw/exec';
+const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx9qVzzb8ncJJAZ2HZ8D2z34kogvAoz7c6-bWtPkJ8qTysMQfjgen-g4L9Rb16zbEsi/exec';
 
 /**
  * Role permissions map.
