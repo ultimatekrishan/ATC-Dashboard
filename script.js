@@ -146,13 +146,13 @@ async function doLogin() {
 
   // ── DEMO MODE ──────────────────────────────────────────────────
   // Remove this block once APPS_SCRIPT_URL is set.
-  if (APPS_SCRIPT_URL === 'https://script.google.com/macros/s/AKfycbzLp2b3m6tAwDkQm61iEuE-DfL8jyjHmBscb7fMdZQmeZkETAkAnv4Mlgx0IySbSUx34w/exec') {
+/*  if (APPS_SCRIPT_URL === 'https://script.google.com/macros/s/AKfycbzLp2b3m6tAwDkQm61iEuE-DfL8jyjHmBscb7fMdZQmeZkETAkAnv4Mlgx0IySbSUx34w/exec') {
     await sleep(1200);
     btn.classList.remove('loading');
     btn.disabled = false;
     showLoginError('Apps Script not configured yet. See SETUP_GUIDE.html.');
     return;
-  }
+  }*/
   // ───────────────────────────────────────────────────────────────
 
   try {
