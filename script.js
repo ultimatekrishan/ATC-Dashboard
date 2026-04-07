@@ -682,28 +682,29 @@ async function loadWeather() {
     const res = await fetch(APPS_SCRIPT_URL + "?action=weather");
     const data = await res.json();
 
-    console.log(data);
+    console.log("Weather Data:", data);
 
     if (data.success) {
 
       // WIND
-      document.querySelector('.wx-cell:nth-child(1) .wx-value')
-        .textContent = `${data.windDir}° / ${data.windSpeed} KT`;
+      document.getElementById('windVal').textContent =
+        `${data.windDir}° / ${data.windSpeed} KT`;
 
       // TEMP / DEW
-      document.querySelector('.wx-cell:nth-child(2) .wx-value')
-        .textContent = `${data.temp}° / ${data.dew}°`;
+      document.getElementById('tempVal').textContent =
+        `${data.temp}° / ${data.dew}°`;
 
       // QNH
-      document.querySelector('.wx-cell:nth-child(3) .wx-value')
-        .textContent = `${data.qnh} hPa`;
+      document.getElementById('qnhVal').textContent =
+        `${data.qnh} hPa`;
 
       // CLOUDS
-      document.querySelector('.wx-cell:nth-child(4) .wx-value')
-        .textContent = data.clouds;
+      document.getElementById('cloudVal').textContent =
+        data.clouds;
 
       // RAW METAR
-      document.getElementById('metarText').textContent = data.raw;
+      document.getElementById('metarText').textContent =
+        data.raw;
 
     }
 
