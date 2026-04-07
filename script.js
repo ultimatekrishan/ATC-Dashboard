@@ -679,15 +679,36 @@ function setText(id, value) {
    =========================================================*/
 async function loadWeather() {
   try {
-    const res = await fetch(`${APPS_SCRIPT_URL}?action=weather`);
+    const res = await fetch(APPS_SCRIPT_URL + "?action=weather");
     const data = await res.json();
 
+    console.log(data);
+
     if (data.success) {
-     document.getElementById('metarText').textContent = data.metar;
-document.getElementById('tafText').textContent   = data.taf;
+
+      // WIND
+      document.querySelector('.wx-cell:nth-child(1) .wx-value')
+        .textContent = `${data.windDir}° / ${data.windSpeed} KT`;
+
+      // TEMP / DEW
+      document.querySelector('.wx-cell:nth-child(2) .wx-value')
+        .textContent = `${data.temp}° / ${data.dew}°`;
+
+      // QNH
+      document.querySelector('.wx-cell:nth-child(3) .wx-value')
+        .textContent = `${data.qnh} hPa`;
+
+      // CLOUDS
+      document.querySelector('.wx-cell:nth-child(4) .wx-value')
+        .textContent = data.clouds;
+
+      // RAW METAR
+      document.getElementById('metarText').textContent = data.raw;
+
     }
+
   } catch (err) {
-    console.error("Weather fetch error:", err);
+    console.error("Weather error:", err);
   }
 }
 
