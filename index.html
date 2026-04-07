@@ -193,23 +193,26 @@
         <div class="card">
           <span class="card-title">Weather Details</span>
           <div class="weather-grid">
-            <div class="wx-cell">
-              <span class="label">Wind</span>
-              <div class="wx-value">090° / 05 KT</div>
-            </div>
-            <div class="wx-cell">
-              <span class="label">Temp/DP</span>
-              <div class="wx-value">28° / 18°</div>
-            </div>
-            <div class="wx-cell">
-              <span class="label">QNH</span>
-              <div class="wx-value qnh">1015 hPa</div>
-            </div>
-            <div class="wx-cell">
-              <span class="label">Clouds</span>
-              <div class="wx-value" style="font-size:16px;">FEW 2500FT</div>
-            </div>
-            <div class="metar-cell">
+           <div class="wx-cell">
+            <span class="label">Wind</span>
+            <div class="wx-value" id="windVal">--</div>
+          </div>
+          
+          <div class="wx-cell">
+            <span class="label">Temp/DP</span>
+            <div class="wx-value" id="tempVal">--</div>
+          </div>
+          
+          <div class="wx-cell">
+            <span class="label">QNH</span>
+            <div class="wx-value qnh" id="qnhVal">--</div>
+          </div>
+          
+          <div class="wx-cell">
+            <span class="label">Clouds</span>
+            <div class="wx-value" id="cloudVal">--</div>
+          </div>
+                      <div class="metar-cell">
               <span class="label">METAR</span>
               <div class="metar-text" id="metarText">Loading METAR...</div>
             </div>
