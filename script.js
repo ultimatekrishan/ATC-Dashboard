@@ -236,6 +236,7 @@ function enterApp() {
   renderChecklist();
   buildAnalyticsPage();
   startAICycler();
+   loadWeather();
 
   showPage('dashboard');
 }
@@ -672,6 +673,25 @@ function setText(id, value) {
   const el = document.getElementById(id);
   if (el) el.textContent = value;
 }
+
+/* ===========================================================
+      Weather code
+   =========================================================*/
+async function loadWeather() {
+  try {
+    const res = await fetch(`${APPS_SCRIPT_URL}?action=weather`);
+    const data = await res.json();
+
+    if (data.success) {
+      document.querySelector('.metar-text:nth-of-type(1)').textContent = data.metar;
+      document.querySelector('.metar-text:nth-of-type(2)').textContent = data.taf;
+    }
+  } catch (err) {
+    console.error("Weather fetch error:", err);
+  }
+}
+
+
 
 /** Simple async sleep */
 function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
