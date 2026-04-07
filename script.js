@@ -683,8 +683,8 @@ async function loadWeather() {
     const data = await res.json();
 
     if (data.success) {
-      document.querySelector('.metar-text:nth-of-type(1)').textContent = data.metar;
-      document.querySelector('.metar-text:nth-of-type(2)').textContent = data.taf;
+     document.getElementById('metarText').textContent = data.metar;
+document.getElementById('tafText').textContent   = data.taf;
     }
   } catch (err) {
     console.error("Weather fetch error:", err);
